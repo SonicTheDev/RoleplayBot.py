@@ -1,10 +1,12 @@
 import discord
-from discord.ext
-from discord import Webhook, RequestsWebhookAdapter
+from discord.ext import commands
+import aiohttp
 import random
 import sys
 
-client = commands.Bot(command_prefix=commands.when_mentioned_or('!'))
+intents = discord.Intents.default()
+intents.message_content = True
+client = commands.Bot(command_prefix = '!', intents=intents)
 client.remove_command("help")
 
 @client.event
@@ -55,7 +57,7 @@ async def esay_error(ctx, error):
 async def commandnamehere(ctx, *, question):
     async with aiohttp.ClientSession() as session:
         if ctx.guild.id == YOURSERVERID:
-            webhook = Webhook.from_url('WEBHOOKTOKENHERE', adapter=AsyncWebhookAdapter(session))
+            webhook = discord.Webhook.from_url('WEBHOOKTOKENHERE', session=session)
             await webhook.send(content=f'{question}', username="WEBHOOKNAMEHERE", avatar_url="WEBHOOKPFPURL")
             await ctx.message.delete()
         else:
