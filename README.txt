@@ -1,5 +1,5 @@
 CUSTOM ROLEPLAY DISCORD BOT.PY
-in discord.py (python)
+in discord.py (python) + Revolt
 
 This source code is for you to be able to create your own custom Roleplay discord.py bot for your RP server/Channel.
 In Discord.py 2.0 and has been made better.
@@ -22,6 +22,9 @@ SETUP
 - Replace WEBHOOKPFPURL with the url for the pfp of the webhook.
 5. For more characters, copy and paste the command where @client.command() async def commandnamehere(ctx, *, question): is and repeat step 6 for additional RP characters.
 6. Run the Bot.
+
+This process is pretty much the same for the Revolt code.
+to use the Revolt code, make sure your bot has the masquerade permission.
 
 ========================================================================================================
 
